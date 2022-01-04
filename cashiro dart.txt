@@ -1,0 +1,1347 @@
+List:
+   is ordered collections of elements.
+all the elements are ordered sequentially.
+with the help of index.
+
+//fixed list length
+****************
+void main()
+{
+  List<int> numberList = List(5);
+  numberList[0]=78;
+  numberList[3]=90;
+  numberList[0]=null;// for deletion
+  numberList[4]=34;
+  numberList[1]=56;
+  
+//print(numberList[0]);
+  //print(numberList[3]);
+/* from here all of these functions is used to display the whole elements in the list*/
+   for(int element in numberList){  /*by using individual object element*/
+   print(element);
+  }
+  for(int i= 0;i< numberList.length; i ++)//by using index
+  print(numberList[i]);
+
+  numberList.forEach((element)=>print(element));//by using lambda 
+}
+once these lists are created they cannot be added new values or, 
+they cannot be increased becaues its fixed like
+List(5);all youhave is  the position of five lists
+
+ 
+Growable List:
+program:
+********
+void main()
+{
+  
+  List<int> number=List();
+  number.add(98);
+  number.add(90);
+  number.add(78);
+  number.add(88);
+  number.add(18);
+  number.add(69);
+  number.removeAt(1);
+  
+  //print(number[0]);
+for(int i=0; i<number.length;i ++)
+  print(number[i]);
+  
+  }
+you can add upto any numbers of list you want there is no limitation
+
+another way of defining Growable list:
+void main()
+{
+  
+  List<String> namePeople=['mohamed qadar','fartuun','Ali'];
+ 
+  namePeople.add("Omar");
+ print(namePeople);
+  }
+
+
+
+Set is unordered collection we cant use with the help of index.
+All elements in set are unique.
+Duplicate elements are ignored in set.
+#program
+*********
+void main()
+{
+  
+  Set nameCountries=new Set();
+ 
+  nameCountries.add("Japan");
+  nameCountries.add("Canada");
+  nameCountries.add("USA");
+  nameCountries.add("UK");
+  nameCountries.add("UAE");
+  
+  
+ 
+  
+// print(nameCountries);
+
+  for(String element in nameCountries )
+    print(element);
+  
+}
+
+
+............
+
+Dart Data types:
+1) numbers
+     . int
+     . double
+ we dont have in dart lang long and float
+2) Strings
+3) Booleans 
+4) Lists(also known as Arrays)
+5) Maps
+6) Runes(for expressing unicode characters in strings)
+7) Symbols 
+in Dart all data types are objects.
+therefore values are default=null.
+
+program:
+********
+//Data types and variables
+void main(){
+  int score ;
+  int count=78;
+  String name ="Mohamed";
+  double percent=89.9;
+  bool isValid= true;
+  
+  
+print(score);
+  print(name);
+  print(count);
+  print(isValid);
+  print(percent);
+}
+
+
+String Literals and String Interpolation:
+***********************************
+what is Literal:
+Literal is everything like 2, or 'Ali', or 4.7 all of these are literals (Numbers, Names ,double and everything)
+**********
+void main(){
+String s1='single';
+String s2="double";
+String s3='it\'s easy';
+String s4="it's not hard";
+String s5='is a very long story which is'  
+  'talking about the real life of mohamed';
+print(s1);
+print(s2);
+print(s3);
+print(s4);
+print(s5);
+ 
+}
+String interpolation:
+****************
+void main(){
+  String name="Mohamed";
+  String message="My name is $name";
+  print (message);
+}
+or you can use this 
+**************
+void main(){
+  String name="Mohamed";
+  print("My name is $name");
+  
+}
+void main(){
+  String name="Mohamed";
+  
+  print ("My name is $name");
+  print('the number of characters in the String Mohamed ${name.length}');
+int l=10;
+int b=20;
+print('the sum of l and b is ${l+b} ');
+  print('the sum of $l and $b is ${l+b} ');
+print('The area of Rectangle length $l and breadth $b is ${l*b}');
+}
+
+Constants: Final and const keywords
+********************************
+why do we need constants: if you dont want to change the values in the future then use the contstants.
+like final and const keywords.
+Difference between final and const keyword:
+final vairiable : can only be set once and its initialized when accessed.
+############
+
+conts variable: is implicitly final but its compile time constant. 
+its initialized during compilation.
+
+instance variables can be final but can't be const.
+  * if you want constant at class level then you have to make it static const.
+###########
+void main(){
+  final cityName="Mogadishu";
+  final countryName="Somalia";
+  const pi=3.14;
+  print(cityName);
+  print(countryName);
+  print(pi);
+}
+
+
+class Circle {
+final Color="red";
+static const pi=3.14;
+}
+ 
+
+
+if else and  else if ladder conditions :
+******************************
+if condition
+program:
+********
+void main(){
+  var money=30000;
+  if( money>=15000 ){
+    print("you have enough money to start new buisness");
+  }
+  else{
+    print("you donot have enough money");
+  }
+  
+}
+
+if(condition) is true
+   execute code here
+else(condition) is false
+   execute code here condition is not working.
+
+else if condition:
+*************
+program:
+*********
+void main(){
+  var marks=86;
+  if(marks>=90 && marks<100){
+    print("Grade: A+");
+    }
+  else if(marks>=80 && marks<90){
+    print("Grade: B+");
+  }else if(marks>=80 && marks<90){
+    print("Grade: C");
+  }else if(marks>=70 && marks<80){
+    print("Grade: D");
+  }else if(marks>=60 && marks<70){
+    print("Grade: B+");
+  }else if(marks>=30 && marks<60){
+    print("Grade: D");
+  }else if(marks >=0 && marks<30){
+  print("failed");
+}
+  else {
+    print("try another time");
+  }
+}
+
+
+Conditional expressions:
+*******************
+condition ? exp1 evaluates if its not true then exp2 it evaluates second expression.
+void main(){
+  int a=3;
+  int b=4;
+  
+  if(a<b){
+    print('a is smaller than b');
+  }else{
+    print('b is smaller');
+  }
+  a<b?  print('a is smaller than b') : print('b is smaller');
+
+
+  
+}
+
+void main(){
+  int a=3;
+  int b=4;
+  int smallNumber;
+  if(a<b){
+    smallNumber=a;
+  }else{
+    smallNumber=b;
+  }
+smallNumber= a<b? smallNumber=a : smallNumber=b;
+or 
+smallNumber=a<b? a:b; // same as above.
+  print('$smallNumber is smaller');
+  
+}
+The whole above program is same ouput as the below one.
+
+void main(){
+  int a=3;
+  int b=4;
+  int smallNumber= a<b? a : b;
+  print('$smallNumber is smaller');
+  
+}
+
+2nd type condition
+syntax: exp1 ?? exp2 
+if exp1 is non-null it prints its value otherwise it prints exp2
+
+void main(){
+  String name='Ali';
+  String magaca= name ?? "Gues User";
+  print(magaca);
+  
+}
+
+
+Switch and Case Conditions:
+************************
+This applicable only for int and String.
+as a parameter you can only the switch only string or integer like. 
+switch("string") or switch(12);
+syntax:
+switch(variable){
+  case1 :
+      execute code here ;
+  break;
+case2 :
+      execute code here ;
+  break;
+default :
+      execute default here;
+}
+
+program:
+********
+void main(){
+  String grade="A";
+  switch(grade){
+    case "A":
+      print("Excellent");
+      break;
+    case "B":
+      print("Very good");
+      break;
+    case "C":
+      print("Passed but work very hard");
+      break;
+    case "F":     
+    print("you have failed");
+      break;
+    default:
+      print("invalid input");
+  }
+  
+}
+
+
+loop concepts:
+for loop, while loop, and Do While loop;
+
+ for loop: 
+********
+syntax:
+for(int i=0;i<5;i++){
+print("Hello");
+}
+
+while loop:
+******* 
+syntax:
+while(i<4){
+print("hello");
+i++;
+}
+
+Do while loop:
+************
+syntax:
+do{
+print("hello");
+i++;
+}while(i<4);
+
+similarities of the loop:
+*****************
+1). Counter variable
+2). Condition check
+3). Increment/Decrement of the counter.
+
+Differences:
+***********
+Loops are devided into two:
+1)Definite
+   a)for loop -> if you how many times your code should be executed.
+2)Indefinite 
+   b)While Loop and c)Do while loop -> if you dont know how many times your code would be executed 
+or if you want execute your code based on some condition.
+Different between: b)while loop and c)Do while loop:
+b) while loop -> we check the condition in the first.
+c) do while loop -> we check the condtion in the last.
+
+void main(){
+  for(int counter=1;counter<=20;counter++){
+    if(counter%2==0)
+    print(counter);
+  }
+  //for .... in
+  List planetList=["Mercury","Earth","Venus","Mars"];
+  for(String element in planetList){
+    print(element);
+  }
+  print(planetList);
+
+
+}
+
+while loop:
+*********
+void main(){
+  int i=1;
+  while(i<=10){
+    if(i%2==0){
+      print(i);
+    }
+    i++;
+  }
+}
+
+do while loop:
+************
+void main(){
+  int i=1;
+  do{
+    if(i%2==0){
+    print(i);
+    }
+    i++;
+  }while(i<=10);
+}
+
+using break and labelled:
+********************
+program:
+
+void main(){
+  for(int i=1;i<=3;i++){
+    for(int j=1;j<=3;j++){
+      if(i==2 && j==2){
+        break;
+      }
+    
+    print('$i $j');
+    }
+  }
+}
+output:
+******
+1 1
+1 2
+1 3
+2 1
+3 1
+3 2
+3 3
+to stop upto 2 1 we have to create user defined outerLoop example:
+void main(){                    // nested for loop
+ myOuterLoop: for(int i=1;i<=3;i++){
+    for(int j=1;j<=3;j++){
+      if(i==2 && j==2){
+        break myOuterLoop;
+      }
+    
+    print('$i $j');
+    }
+  }
+}
+ output:
+*******
+1 1
+1 2
+1 3
+2 1
+
+using coninue:
+void main(){
+  for(int i=1;i<=10;i++){
+    
+      if(i==6){
+        continue;
+      }
+    
+    print(i);
+    
+  }
+}
+output:
+******
+1
+2
+3
+4
+5
+7
+8
+9
+10
+
+
+using continue to get odd numbers:
+*****************************
+void main(){
+  for(int i=1;i<=10;i++){
+    
+      if(i%2==0){
+        continue;
+      }
+    
+    print(i);
+    
+  }
+}
+ouput:
+*****
+1
+3
+5
+7
+9
+
+
+using continue with label:
+void main(){
+  myLoop:for(int i=1;i<=3;i++){
+    for(int j=1; j<=3;j++){
+    
+      if(i==2 && j==2){
+        continue myLoop;
+      }
+    
+    print("$i $j");
+    }
+  }
+}
+
+output:
+1 1
+1 2
+1 3
+2 1
+3 1
+3 2
+3 3
+
+
+Functions:
+********
+-> introduction of functons
+->Syntax and properties of function
+->function as expressions
+->Different types of function parameters
+    . Required parameters
+    . optional parameters
+       * optional positional parameters
+       * optional Named Parameters
+       * optional Default Parameters
+all these topics will disscuss one by one
+
+->Introduction of functions:
+***********************
+what is a function:  is a collection of statements grouped together to perform an operation.
+all functions in dart are objects.
+fucntions can be assigned variables or passed as a parameter to other functions.
+All functions in dart returns  a value. 
+   . if no return value is specified the function return null by default.
+specifying the return type is optional but is recommended as per code convention.
+eg:
+int findArea(int length, int breadth){                                            //the function defintion
+// the fucntion body here
+return langth * breadth
+} 
+
+program:
+*******
+void main(){
+findArea();
+}
+void findArea(){
+int a=18;
+int b=12;
+int area=a*b;
+print("the area is $area");
+}
+
+
+
+or you can use this:
+***************
+void main(){
+findArea(4 , 5);
+}
+void findArea(int a, int b){
+
+int area=a*b;
+print("the area is $area");
+}
+
+return type mode:
+***************
+
+void main(){
+int rectBase=getBase(6,5);
+print("The area of rect is $rectBase");
+}
+int getBase(length, breadth){
+  int base=(length*breadth);
+  
+  return base;
+  
+}
+
+optional positional paramters:
+************************
+// optional you can leave some of the parameters
+******************************************
+void main(){
+  printCities("USA","India");
+}
+void printCities(String name1, String name2,[ String name3] ){
+  
+  print("Name 1 is $name1");
+  print("Name 2 is $name2");
+  print("Name 3 is $name3");
+}
+
+output:
+******
+Name 1 is USA
+Name 2 is India
+Name 3 is null
+
+optional Named parameters:
+*************************
+you can call the named parameters in any order you want.
+void main(){
+  findVolume(10,breadth:20,height:40);
+  
+}
+  
+  void findVolume(int length, {int height, int breadth}){
+    
+    print("Length is $length");
+    print("height is $height");
+    print("breadth is $breadth");
+    print("Volume is ${length*breadth*height}");
+    
+    
+  }
+optional default paramters:
+********************
+you can assign the values in default :
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+void main(){
+  findVolume(10,30);
+  
+}
+  
+  void findVolume(int length, int height, {int breadth=10}){
+    
+    print("Length is $length");
+    print("height is $height");
+    print("breadth is $breadth");
+    print("Volume is ${length*breadth*height}");
+  }
+
+Exception handling:
+****************
+void main(){
+try{
+int result=12 ~/ 0;
+print("The is $result");
+}on integerDeivisonByZeroException{
+print("Cannot  devide by zero");
+}
+}
+
+Case 2:
+
+using catch:
+void main(){
+   try{
+  int result= 12 ~/ 0;
+    print("The result is $result");               
+   }catch(e){
+     print("cannto divide by zero");
+   }
+   }
+
+using stack trace which is what happened before the exception is thrown:
+****************************************************************
+
+void main(){
+   try{
+  int result= 12 ~/ 0;
+    print("The result is $result");               
+   }catch(e,s){
+     print("The exception thrown is $e");
+     print("Stack trace $s");
+   }
+   }
+
+finally clause is always executed whether the exception is thrown or not:
+****************************************************************
+
+void main(){
+   try{
+  int result= 12 ~/ 0;
+    print("The result is $result");               
+   }catch(e,s){
+     print("The exception thrown is $e");
+     
+   }finally{
+print("final clause is always executed");
+}
+   }
+creating our own execption:
+***********************
+void main(){
+try{
+depositMoney(-200);
+}catch(e){
+print(e.errorMessage());
+}
+
+}
+class DepositException implements Exception{
+  String errorMessage(){
+  return "You cannot enter amount less than 0";
+}
+}
+void depositMoney(int amount){
+if(amount<0){
+throw new DepositException();
+}
+}
+
+
+object oriented programming in Dart:
+*********************************
+creating class:
+***********
+void main(){
+var student1=Student();
+  student1.id=25;
+  student1.name="Mohamed";
+  print("${student1.id} and ${student1.name}");
+student1.study();
+student1.sleep();
+  
+  var student2=Student();
+  student2.id=65;
+  student2.name="Muhidiin";
+  print("${student2.id} and ${student2.name}");
+  student2.sleep();
+  student2.study();
+}
+
+class Student {
+String name;  //Instance or field variable its default value is null
+int id;
+void sleep(){
+print("${this.name} is sleeping");
+}
+
+void study(){
+
+print("${this.name} is studying");
+}
+  
+}
+
+Constructor:
+**********
+1)Default constructor
+2)Paramterized constructor
+3)Named constructor
+4)Constant constructor
+
+1)Default Constructor
+Declaration of default constructor is already in the class no need to declare it unless you need to write 
+something in it.
+always the constructor is executed before the execution of anything.
+
+2)Paramterized:
+***********
+If the constructor have parameter is called paramterized constructor.
+and its declared like this:
+
+Student(int id,String name){
+this.id=id;
+this.name=name;    
+  }
+two different costructors with in the same class cannot be created the same time one of them have to stay.
+or can be created like this:
+Student(this.id,this.name);
+
+
+3)Named constructor:
+is a constructor that you create using the name you want
+syntax:
+Student.myConstructor(){
+
+print("This is my constructor");
+}
+
+void main(){
+var student3=Student.myConstructor();
+student3.id=45;
+student3.name="Mohamed";
+print("$student3.id, $student3.name");
+}
+
+in the same class we can have multiple named constructors.
+or can be created like this:
+
+Student.myAnotherConstructor(this.id,this.name); 
+
+void main(){
+var student4=Student.myAnotherConstructor(56,"Shaati");
+print("${student4.id},${student4.name}");
+}
+
+
+Getters and Setters in Dart:
+************************
+1)Default Getter and Setter:
+**************************
+in dart when ever we define  an instance  variable that variable will act as Default Gtter and Setter for that 
+instance variable.
+e.g: student1.name="Moha";// calling the default Setter to set the value.
+print("${student1.name}"); //  calling the default Getter to get the value.
+
+
+Custom Getter and setter:
+**********************
+* To define our custom setter we use the set key word.
+and each of the setter gets atleast one parameter.
+
+   void set percentage(int marksSecured){
+     int percent=(marksSecured/500)*100;
+}
+
+* To define the custom getter we have to use the get key word.
+in getter we cannot use the parenthesis () like we have in function.
+
+int get percentage{
+  return percent;
+}
+
+program
+*********
+void main(){
+var student2=Student();
+  student2.percentage=487.0;
+  print("${student2.percentage}");
+
+}
+
+class Student {
+
+String name;
+  double percent;
+  
+  void set percentage(double marksSecured){
+ 
+    percent=(marksSecured/500)*100;
+  
+  }
+  
+  double get percentage{
+     return percent;
+  }
+}
+
+
+private instance variable:
+**********************
+in dart we dont have something like private protected and public key words:
+but we can use the underscore symbol _ to make the variable private to its own library. 
+
+void main(){
+var student2=Student();
+  student2.percentage=487.0;
+  print("${student2.percentage}");
+
+}
+
+class Student {
+
+String name;
+  double _percent;
+  
+  void set percentage(double marksSecured)=>_percent=(marksSecured/500)*100;
+  
+  }
+  
+  double get percentage=>return _percent;
+  
+}
+
+
+Inheritance:
+**********
+ is a mechanism in which one class(child class) requires the properties of another class(parent class).
+in dart we have three parts of inheritance:
+1)single inheritance   2)Multi-Level inheritance  3)Hirarichal inheritance.
+Super class of any class is object.
+     . provides default implementation of:
+        -> toString(), returns the string representation of the object.
+        -> hashCode Getter, returns the hashCode of the object.
+       -> operator==, which helps to compare two objects.
+
+Advantages of inheritance:
+    . Code reusabilty.
+    . provides  Method overriding. 
+    . cleanrer: reduces code repetation
+
+Hirarichal inheritance:
+*****************
+program:
+*******
+void main(){
+var s = Cat();
+  s.color="white";
+  s.age=3;
+  print("${s.color},${s.age}");
+ 
+  s.eat();
+  s.meow();
+  
+var ob=Dog();
+  ob.color="black";
+  ob.breed="labrador";
+  print("${ob.color},${ob.breed}");
+  ob.bark();
+  ob.eat();
+
+}
+class Animal{
+String color;
+  void eat(){
+
+  print("Eat!");
+  }
+  
+}
+
+class Cat extends Animal{
+
+
+int age;
+  
+  void meow(){
+
+  print("cat says meow");
+  }
+  
+}
+
+class Dog extends Animal{
+
+String breed;
+
+  void bark(){
+print("Dog barks");
+  }
+}
+
+        
+method overriding:
+****************
+we can reuse the method in the parent class and remodify it in the child class.
+
+program:
+********
+void main(){
+
+  
+var ob=Dog();
+  
+  print(ob.color);
+  ob.eat();
+
+}
+class Animal{
+String color="Brown";
+  void eat(){
+
+  print("Animal is eating");
+  }
+  
+}
+
+
+
+class Dog extends Animal{
+
+String breed;
+  String color="Black";
+  void eat(){
+  super.eat();
+  print("dog is eating");
+  }
+  
+
+  void bark(){
+print("Dog barks");
+  }
+}
+
+
+Inheritance with constructors:
+*************************
+in dart whenever we have any constructor there is implicit call to the super class constructor.
+when the super class has no argument we dont need to call , it calls implicitely.
+but if it has argument like Animal(String color) then we have to use super keyword.  super(color) 
+if it is named constrctor we can call it as super.myNamedConstructor(color).
+parent class is always called before the child class.
+if the default constructor is missing in the super class then we have to call the named or the paramterized constructor.
+1)Default constructor
+2)Named constructor
+
+program:
+********
+void main(){
+var dog1=Dog("labradator","Black");
+  dog1.color;
+  dog1.breed;
+  print("${dog1.breed},${dog1.color}");
+ print("");
+  
+  var dog2=Dog("Pug","Black");
+  dog2.color;
+  dog2.breed;
+  print("${dog2.breed},${dog2.color}");
+  
+  print("");
+  var dog3=Dog.myNamedConstr("German","white");
+  dog3.color;
+  dog3.breed;
+  print("${dog3.color},${dog3.breed}");
+  
+}
+class Animal {
+String color;
+  
+  Animal(String color){
+    this.color=color;
+print("Animal constructor");
+  }
+  Animal.myAnimal(color){
+    this.color=color;
+print("My Animal constructor");
+  }
+}
+class Dog extends Animal{
+String breed;
+  Dog(String breed,String color):super.myAnimal(color){
+     this.breed=breed;
+  print("Dog Constructor");
+    }
+  Dog.myNamedConstr(String breed,String color):super.myAnimal(color){
+    this.breed=breed;
+    print("My named Constructor");
+
+  }
+}
+
+Abstract class and abstract method:
+******************************
+
+The Abstract class can be created by using the abstract keyword.
+the abstract class cannot be instentiated with in the main function.
+The abstract method can only exist within the abstract class not with in the normal class.
+Abstract can have abstract methods, normal methods and instance variables
+to create the abstract method we create it inside the absttact calass
+e.g:   abstract class shape{
+void drow();   //no need to give body 
+}
+in order to intentaite it we create another class 
+e.g: class Rectangle extends shape{
+  void drow(){                  //we have to override the same function in the abstract class 
+}
+print("Rectangle drowing ");
+}
+void main(){
+var rect=Rectangle();
+rect.drow();
+}
+
+program:
+void main(){
+var rect=Rectangle();
+  
+  rect.drow();
+ var cir=Circle();
+  cir.drow();
+}
+you can use  multiple classes to inherit from the abstract class and override the methods in the abstract class.
+abstract class Shape{
+  
+void drow();
+} 
+class Rectangle extends Shape{
+void drow(){
+print("Drowing Rectangle ...");
+}
+}
+class Circle extends Shape{
+void drow(){
+
+print("Drowing circle...");
+}
+}
+
+Interface:
+********
+in interface you can implement more classes, but you cannot inherit multiple classes during inheritance.
+in dart we dont have any syntax to declare interface because noramal classes can act as interface.
+an interface is used when you need concrete implementation of all its functions within it's subclass.
+     .its mandatory to override all the methods in the implementing class.
+program:
+********
+void main(){
+var tv=Television();
+  tv.volumeUp();
+  tv.volumeDown();
+  tv.show();
+}
+class AnotherClass {
+void show(){
+print("some code");
+}
+}
+class Remote{
+
+void volumeUp(){
+print("volume up from remote");
+  
+}
+  void volumeDown(){
+print("volume down from remote");
+  }
+}
+class Television implements Remote,AnotherClass{
+  void volumeUp(){
+print("volume up from tv");
+  }
+  void volumeDown(){
+print("volume down from tv ");
+  }
+  void show(){
+print("some code");
+  }
+}
+
+Static method and variable:
+***********************
+To make the variable or the method static we use the static keyword.
+static variable is also known as class variable.
+and static method is also known as class method.
+static variable are lazily initailized.
+when we make the method and the variable static we cannot call by creating object but we can call with the help of the class name.followed by the class name.
+why we using static keyword:
+e.g: if you want to use pi which is =3.14 if you make it intance variable it will allocate more memory space every time you call it new space to avoid that we use the static syntax to just use it one space and we can call it so many times. it consumes memory ones.
+The value of pi is always=3.14 if some one changes it to another number like 6.14 it will change to 6.14 which is wrong to avoid that we have to make use the const keyword once we use const keyword no one can change it.
+eg: static const double pi=3.14;
+you can call static function in normal instance function but you cant call instance function in the static function.
+You cannot use this keyword with the static function. and also you cannot call instance variable in the static function.
+
+Lambda function:
+***************
+lambda function is name less function .   lambda function is also known as annonymous function.
+in dart we have special class of function.
+
+program:
+*******
+void main(){
+Function add=(int a , int b){
+      var sum=a+b;
+  print(sum);
+};
+  var dhufashoLaboTiro=(int lacag){
+        return lacag*100;
+  };
+  add(5,6);
+print( dhufashoLaboTiro(4));
+  
+}
+output:
+11
+400
+
+using short hand syntax:
+Function add=(int a , int b)=>print(a+b);
+
+
+Higher order function:
+a function that accepts another function as a parameter.
+a function that can return a function.
+or it can do both.
+
+program:
+********
+void main(){
+Function addNumber=( a, b)=>print(a+b);
+  someFunc('waa aniga',addNumber);
+}
+
+void someFunc(String message, Function myFunction){
+print(message);
+  myFunction(6,8);
+
+}
+
+another program:
+**************
+void main(){
+var myFunc=taskToperform();
+print(myFunc(10));
+}
+Function taskToperform(){
+
+ Function multiplyByFour=(int number)=>number*4;
+     return multiplyByFour;
+     
+ }
+
+output:
+******
+40
+
+Closures:
+*********
+closure is a special function with in closure you can mutate or modify the values of the variables present in the parent scope.
+
+program:
+********
+void main(){
+String message="Dart wax kale waaye";
+
+Function showMessage=(){
+message="war dart waa eber";
+  print(message);
+};
+showMessage();
+}
+
+another program:
+**************
+void main(){
+
+
+Function talk=(){
+  String msg="wa ku ...";
+  
+  Function say=(){
+   msg='anaa ku rabo';
+    print(msg);
+  };
+  return say;
+};
+  
+  Function speak=talk();
+  speak();
+}
+
+
+FlatButton:
+***********
+
+onPressed:  (){
+setState((){
+here you write the state you want to update.
+});
+}
+
+how flutter generates random number
+**********************************
+import :"dart:math";
+var name=Random().nextInt(max value);
+
+
+
+Map and HashMap:
+*****************
+Map:
+*****
+is unordered collection of key-value-pair.
+key vslue can be of any object type.
+  . Each key in a map should be unique
+  . The value can be repeated.
+Commonly called as hash or dictionary.
+Size of map is not fixed, it can increase or decrease as per the number of elements.
+
+HashMap:
+*********
+is the implementation of the Map class.
+and its based on the hash table.
+
+program:
+********
+void main(){
+Map<String, String> fruits= Map();
+  fruits["banana"]="yellow";
+  fruits["Orange"]="Orange";
+  fruits["Lemon"]="Green";
+  print(fruits["banana"]);
+  
+  fruits.containsKey("apple");                            // To check if a particular key is contained in the map.
+  fruits.update("banana",(value)=>"white");  // To update the value of a particular key. 
+  fruits.length;
+  
+  
+  print("\n");
+  for(String key in fruits.keys){
+
+  print(key);
+    }
+  print("\n");
+  for(String value in fruits.values){
+print(value);
+  }
+  fruits.forEach((key,value)=>print("key:$key and value:$value"));
+}
+Another way to describe Map is 
+code:
+*****
+Map<String , int> countryDialogCode={"USA":1,"SOM":252,"KEN":247};
+
+Callable class:
+************
+is a class that can be called like function.
+ example:
+********
+void main(){
+var personOne=Person()
+var masg=personOne(25,"Peter");
+
+print(msg);
+}
+class Person {
+String call(int age, String name){
+return "The age of the person is $age and the Name of the person is $name";
+}
+}
